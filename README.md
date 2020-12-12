@@ -125,6 +125,12 @@ python visualize.py --test_dir <thư mục ảnh test> \
                      --outdir 'thư mục xuất ảnh'
 ```
 
+### 3.6 Demo trên 1 ảnh hoặc 1 video
+
+```
+updating...
+```
+
 Ví dụ một số kết quả:
 
 ![](https://i.imgur.com/l4eTvYT.jpg)
