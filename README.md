@@ -3,7 +3,7 @@
 ## 0. Giới thiệu
 
 Đây là source code đồ án môn <b>Máy học</b> CSS114 trường UIT đề tài <b>Phát hiện và phân loại biển báo</b> gồm 02 thành viên:
-- Bùi Cao Doanh
+- Bùi Cao Doanh 19521366
 - Lê Phước Nhật Nam
 
 Souce code được xây dựng từ platform <b>Detectron2</b>. Ở đây sử dụng 02 backbone chính để phân loại biển báo đó là <b>ResNet101</b> và <b>ResNet50</b>.
@@ -12,7 +12,7 @@ Souce code được xây dựng từ platform <b>Detectron2</b>. Ở đây sử 
 
 Chúng tôi sử dụng dữ liệu VNTSDB của nhóm tác giả Hoàng Hữu Tín (UIT K10) để phát hiện biển báo. Dữ liệu có thể tải về tại đây: https://github.com/Flavius1996/VNTS-faster-rcnn
 
-Ở dữ liệu phân loại biển báo, chúng tôi sử dụng dữ liệu Traffic sign detection của Zalo AI Challenge 2020.
+Ở dữ liệu phân loại biển báo, chúng tôi sử dụng dữ liệu Traffic sign detection của Zalo AI Challenge 2020. Được công bố ở https://challenge.zalo.ai/portal/traffic-sign-detection
 
 ## 2. Cài đặt
 
@@ -59,9 +59,9 @@ file config ở `--config` có thể xem ở `configs/faster_rcnn`
 Ví dụ:
 
 ```
-python train.py --train_dir '/content/drive/MyDrive/DATA_DOAN_HOCMAY/train' \
+python train.py --train_dir '/train' \
               --name 'VNTSDB' \
-              --json_dir '/content/drive/MyDrive/DATA_DOAN_HOCMAY/COCO_annotation/train.json' \
+              --json_dir '/train.json' \
               --iter 5000 \
               --batch 256 \
               --lr 0.001 \
@@ -90,7 +90,7 @@ python detect.py --test_dir <thư mục ảnh test> \
 Ví dụ:
 
 ```
-python detect.py --test_dir '/content/drive/MyDrive/DATA_DOAN_HOCMAY/val' \
+python detect.py --test_dir 'val' \
                   --weight 'model/model_final.pth' \
                   --config 'COCO-Detection/faster_rcnn_R_101_FPN_3x.yaml' \
 ```
@@ -128,8 +128,19 @@ Chúng tôi đã tiến hành huấn luyện và thu được các kết quả:
 
 ### 4.1. Phát hiện vị trí biển báo
 
+Chúng tôi tiến hành chạy 4 phương pháp Yolov4-tiny, Yolov4 custom, Faster R-CNN backbone Resnet50, Faster R-CNN backbone Resnet101 để thử nghiệm kết quả.
+
 ![](https://i.imgur.com/5CuUlZS.png)
 
 ### 4.2. Phân loại biển báo
+
+Dữ liệu biển báo chia thành 7 class:
+- Cấm vào
+- Cấm rẽ
+- Cấm đỗ
+- Giới hạn tốc độ
+- Các biển báo còn lại
+- Nguy hiểm
+- Hiệu lệnh
 
 ![](https://i.imgur.com/fjhI9Ls.png)
