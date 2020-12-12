@@ -79,6 +79,12 @@ python test_map.py --test_dir <thư mục test> --json_dir <thư mục annotate>
 
 ### 3.3. Chạy ra detection
 
+> Tải model đã train sẵn tại đây: (Bỏ vào thư mục `model/detect`)
+> - Faster R-CNN ResNet50: https://drive.google.com/file/d/1E-NkWzld6D9BHNMhZPe9WoAkP9hGonoX/view?usp=sharing
+> - Faster R-CNN ResNet101: https://drive.google.com/file/d/10b1QV9-wiPEdCMfn3e83jKJubpv4Tv-M/view?usp=sharing
+> - Yolov4-tiny: updating...
+> - Yolov4 custom: updating...
+
 Chúng tôi lưu các detection vào các file `.npy` mặc định được lưu ở folder `detect`.
 
 Chạy detection bằng cách:
@@ -95,6 +101,11 @@ python detect.py --test_dir 'val' \
                   --config 'COCO-Detection/faster_rcnn_R_101_FPN_3x.yaml' \
 ```
 ### 3.4. Phân loại lại bằng model classifier
+
+> Tải model đã train sẵn tại đây: (Bỏ vào thư mục `model/detect`)
+> - LR: https://drive.google.com/file/d/1O8zbwcGQhc8z8_Xge3Ma1N1Gcn50lyQg/view?usp=sharing
+> - SVM: https://drive.google.com/file/d/1-38g-y_SPlwXJp_dvuibMJsqaNj3Af0f/view?usp=sharing
+> - XGB: https://drive.google.com/file/d/1-2pf6xDSy0LVG1OCEE1IpxoJT8KUqByt/view?usp=sharing
 
 Thư mục `detect` chỉ chứa các file npy chứa bbox của các đối tượng biển báo. Để phân loại biển báo đó là biển báo gì chúng ta cần đưa qua 1 model classifer. Ở đây chúng tôi đã huấn luyện 3 model: `SVM`, `XGBoost`, `Logistic Regression`.
 
