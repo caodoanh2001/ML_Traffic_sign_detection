@@ -127,6 +127,24 @@ python visualize.py --test_dir <thư mục ảnh test> \
 
 ### 3.6 Demo trên 1 ảnh hoặc 1 video
 
+#### Ảnh
+
+```
+python demo_image.py --image_path '00000.jpg' \
+                  --weight 'model/detect/Faster_RCNN_101_FPN_3x.pth' \
+                  --config 'COCO-Detection/faster_rcnn_R_101_FPN_3x.yaml' \
+                  --model 'svm'
+```
+
+### Video
+
+```
+python demo_video.py --video_path '00000.mp4' \
+                  --weight 'model/detect/Faster_RCNN_101_FPN_3x.pth' \
+                  --config 'COCO-Detection/faster_rcnn_R_101_FPN_3x.yaml' \
+                  --model 'svm'
+```
+
 ```
 updating...
 ```
