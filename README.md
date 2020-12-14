@@ -127,24 +127,6 @@ python visualize.py --test_dir <thư mục ảnh test> \
 
 ### 3.6 Demo trên 1 ảnh hoặc 1 video
 
-#### Ảnh
-
-```
-python demo_image.py --image_path '00000.jpg' \
-                  --weight 'model/detect/Faster_RCNN_101_FPN_3x.pth' \
-                  --config 'COCO-Detection/faster_rcnn_R_101_FPN_3x.yaml' \
-                  --model 'svm'
-```
-
-### Video
-
-```
-python demo_video.py --video_path '00000.mp4' \
-                  --weight 'model/detect/Faster_RCNN_101_FPN_3x.pth' \
-                  --config 'COCO-Detection/faster_rcnn_R_101_FPN_3x.yaml' \
-                  --model 'svm'
-```
-
 ```
 updating...
 ```
@@ -165,7 +147,8 @@ Chúng tôi đã tiến hành huấn luyện và thu được các kết quả:
 
 Chúng tôi tiến hành chạy 4 phương pháp Yolov4-tiny, Yolov4 custom, Faster R-CNN backbone Resnet50, Faster R-CNN backbone Resnet101 để thử nghiệm kết quả.
 
-![](https://i.imgur.com/5CuUlZS.png)
+![](https://i.imgur.com/d8mw7Id.png)
+
 
 ### 4.2. Phân loại biển báo
 
@@ -178,4 +161,9 @@ Dữ liệu biển báo chia thành 7 class:
 - Nguy hiểm
 - Hiệu lệnh
 
-![](https://i.imgur.com/fjhI9Ls.png)
+![](https://i.imgur.com/oak42DK.png)
+
+## 5. Colab notebook cho bộ phân lớp
+
+Để huấn luyện 3 bộ phân loại `SVM`, `XGBoost`, `Logistic Regression` chúng tôi sử dụng link colab dưới đây
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1_T01bgLd2e3qwxL3Jg-ltWFx0-6Ocxpe)
